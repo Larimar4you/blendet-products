@@ -8,7 +8,11 @@ import {
   updateProduct,
 } from '../controllers/products.js';
 
+import { authenticate } from '../middlewares/authenticate.js';
+
 const productsRouter = Router();
+
+productsRouter.use(authenticate);
 
 productsRouter.get('/', getAllProducts);
 
